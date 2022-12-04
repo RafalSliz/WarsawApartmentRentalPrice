@@ -25,8 +25,120 @@ In fifth step I deployed app to cloud using AWS EC2 and NGINX. I assigned the do
 #### 3.Select launch instance
 
 #### 4.Create istance like on the screen below
+<img align="center" src="https://user-images.githubusercontent.com/35708288/205495034-2f2bd627-906e-4437-9f4d-5c52011bcee0.png" width="450"/>
+<img align="center" src="https://user-images.githubusercontent.com/35708288/205495035-4df16351-e8fc-4c73-90f6-2f9954195283.png" width="450"/>
+<img align="center" src="https://user-images.githubusercontent.com/35708288/205495039-6a7c5300-0dc3-4eb9-a300-400f59333f96.png" width="450"/>
+<img align="center" src="https://user-images.githubusercontent.com/35708288/205495041-997f7737-b969-489e-bda7-e7e122d0ebc5.png" width="450"/>
+<img align="center" src="https://user-images.githubusercontent.com/35708288/205495042-45845d06-ae24-4580-9c1e-b76ad8609c8f.png" width="450"/>
+<img align="center" src="https://user-images.githubusercontent.com/35708288/205495045-d5bf60a4-c836-4364-ae42-b964be29c382.png" width="450"/>
+<img align="center" src="https://user-images.githubusercontent.com/35708288/205495025-3683b212-f57a-46a1-9d67-d94d3259dd09.png" width="450"/>
+<img align="center" src="https://user-images.githubusercontent.com/35708288/205495031-92b8115a-dd2f-42c2-999d-9d3c3708efe0.png" width="450"/>
+
+#### 5.Log in to newly created VM instance
 
 
+#### 6.Update package information
+```
+sudo apt-get update
+```
+#### 7.Install NGINX
+NGINX server is used to link the application to the external domain of rentalprice.ml 
+```
+sudo apt-get install nginx
+```
+#### 8.Go to location
+```
+cd /etc/nginx/sites-enabled
+```
+#### 9.Remove symlink for default file
+```
+sudo unlink default
+```
+#### 10.Go to sites-avaliable and create rentalprice.ml file
+```
+cd ../sites-available
+```
+rentalprice.ml file should look like below:
+```
+server {
+    root /home/ubuntu/WarsawApartmentPrice/client;
+    index app.html;
+	server_name rentalprice.ml www.rentalprice.ml;
+	location / {
+		try_files $uri $uri/ =404;
+	}
+
+    listen [::]:443 ssl ipv6only=on; # managed by Certbot
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/rentalprice.ml/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/rentalprice.ml/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+	listen 80;
+        listen [::]:80;
+	server_name rentalprice.ml www.rentalprice.ml;
+	root /home/ubuntu/WarsawApartmentPrice/client;
+	index app.html;
+	location /api/ {
+		rewrite ^/api(.*) $1 break;
+                proxy_pass http://127.0.0.1:5000;
+	}
+}
+
+server {
+    if ($host = www.rentalprice.ml) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    if ($host = rentalprice.ml) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	server_name rentalprice.ml www.rentalprice.ml;
+    return 404; # managed by Certbot
+}
+```
+#### 11.Create symlink
+```
+sudo ln -v -s /etc/nginx/sites-available/bhp.conf
+```
+
+#### 12.Restart NGINX
+```
+sudo service nginx restart
+```
+#### 13.Install pip
+```
+sudo apt-get install python3-pip
+```
+#### 14.Install python 3.8
+```
+sudo apt install python3.8 python3.8-dev  python3.8-venv
+```
+#### 15.Upload all application files to server using FileZilla
+
+#### 16.Install requirements
+```
+sudo pip3 install -r /home/ubuntu/WarsawApartmentPrice/server/requirements.txt
+```
+#### 17. Run the application using tmux
+Start a new session in the console
+```
+tmux new -s rentalprice
+```
+Run App
+```
+python3 /home/ubuntu/WarsawApartmentPrice/server/server.py
+```
+#### 18. Domain configuration on the Freenom platform
 
 
 You can check app: www.rentalprice.ml
