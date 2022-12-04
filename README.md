@@ -35,7 +35,7 @@ In fifth step I deployed app to cloud using AWS EC2 and NGINX. I assigned the do
 <img align="center" src="https://user-images.githubusercontent.com/35708288/205495031-92b8115a-dd2f-42c2-999d-9d3c3708efe0.png" width="450"/>
 
 #### 5.Log in to newly created VM instance
-
+<img align="center" src="https://user-images.githubusercontent.com/35708288/205497359-439fac22-df12-47ae-8fa9-236c65ea0737.png" width="450"/>
 
 #### 6.Update package information
 ```
@@ -54,7 +54,7 @@ cd /etc/nginx/sites-enabled
 ```
 sudo unlink default
 ```
-#### 10.Go to sites-avaliable and create rentalprice.ml file
+#### 10.Go to sites-available and create rentalprice.ml file
 ```
 cd ../sites-available
 ```
@@ -139,6 +139,8 @@ Run App
 python3 /home/ubuntu/WarsawApartmentPrice/server/server.py
 ```
 #### 18. Domain configuration on the Freenom platform
-
+<img align="center" src="https://user-images.githubusercontent.com/35708288/205497360-d36a94cd-54f5-439c-ad02-6feacf631a61.png" width="450"/>
+<img align="center" src="https://user-images.githubusercontent.com/35708288/205497362-4fb0f822-1452-4703-b24f-c89b6cee3a1c.png" width="450"/>
+<img align="center" src="https://user-images.githubusercontent.com/35708288/205497364-94715be8-2fc9-4a94-b5bd-fb320b038c12.png" width="450"/>
 
 You can check app: www.rentalprice.ml
