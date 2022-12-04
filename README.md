@@ -22,6 +22,11 @@ In fifth step I deployed app to cloud using AWS EC2 and NGINX. I assigned the do
 
 #### 2.Select EC2 service
 
+#### 3.Select launch instance
+
+#### 4.Create istance like on the screen below
+
+
 
 
 You can check app: www.rentalprice.ml
