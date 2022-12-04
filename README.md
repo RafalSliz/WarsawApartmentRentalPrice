@@ -1,10 +1,10 @@
 # Warsaw Apartment Rental Price
 
-<img align="center" src="https://user-images.githubusercontent.com/35708288/158497746-9a402e1f-a522-4d48-b558-aa2ef37eed61.png" width="81"/> &emsp; &emsp; &emsp; 
-<img align="center" src="https://user-images.githubusercontent.com/35708288/158498254-d32accc7-259e-422f-8588-5b4ed4d83cd8.png" width="105"/> &emsp; &emsp; &emsp;
-<img align="center" src="https://user-images.githubusercontent.com/35708288/158498353-1f996fdd-9a68-43f4-9926-3b3db5548265.png" width="97"/> &emsp; &emsp;
-<img align="center" src="https://user-images.githubusercontent.com/35708288/205467200-29352db5-d9bd-4620-bdb5-f13459863cbb.png" width="150"/> &emsp;
-<img align="center" src="https://user-images.githubusercontent.com/35708288/205467301-52e52a12-7418-4f76-a94e-8f441ceb7235.png" width="150"/> &emsp;
+<img align="center" src="https://user-images.githubusercontent.com/35708288/158497746-9a402e1f-a522-4d48-b558-aa2ef37eed61.png" width="81"/> &emsp; &emsp;
+<img align="center" src="https://user-images.githubusercontent.com/35708288/158498254-d32accc7-259e-422f-8588-5b4ed4d83cd8.png" width="105"/> &emsp; &emsp;
+<img align="center" src="https://user-images.githubusercontent.com/35708288/158498353-1f996fdd-9a68-43f4-9926-3b3db5548265.png" width="97"/> &emsp;
+<img align="center" src="https://user-images.githubusercontent.com/35708288/205467200-29352db5-d9bd-4620-bdb5-f13459863cbb.png" width="150"/>
+<img align="center" src="https://user-images.githubusercontent.com/35708288/205467301-52e52a12-7418-4f76-a94e-8f441ceb7235.png" width="150"/>
 <img align="center" src="https://user-images.githubusercontent.com/35708288/205486116-8f026d62-71cf-425b-acc3-8f8ec55f0b51.png" width="150"/>
 
 
